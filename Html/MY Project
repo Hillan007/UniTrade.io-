@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eats blog</title>
+    <link
+      rel="icon"
+      href="/Images/"
+      style="border-radius: 10px; width: 20px; height: 20px"
+    />
+    <style>
+      body {
+        display: flow-root;
+        font-size: 1.25rem;
+        background: #fff;
+      }
+      h1 {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 8rem;
+        font-weight: bold;
+        margin: 0;
+      }
+      h1::first-letter {
+        font-size: 15rem;
+        font-style: italic;
+        font-weight: bold;
+        color: rgb(124, 68, 0);
+      }
+      .foods {
+        width: 200px;
+        height: auto;
+        padding: 4px;
+        transition: all 0.5s ease-in;
+      }
+      .foods:hover {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      }
+      .price {
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+      }
+      p {
+        margin: 20px;
+      }
+
+      .mutura-cont {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: 4px;
+        padding: 5px;
+        background-color: rgb(108, 172, 108);
+        float: right;
+        overflow: hidden;
+        opacity: 0.96;
+        transition: all 0.3s ease;
+      }
+      .mutura-cont:hover {
+        background-color: rgb(0, 78, 7);
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      .mutura {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      hr {
+        border: 1px solid black;
+        width: 100%;
+        margin: 20px 0;
+      }
+      .head-cont {
+        background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .vid1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .end {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      footer {
+        background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+      }
+      form {
+        background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(66, 41, 41, 0.1);
+        max-width: 600px;
+        margin: auto;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      .btn {
+        background-color: black;
+        color: white;
+        font-size: 1.3rem;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      .btn:hover {
+        background-color: #333333;
+      }
+      .form-name {
+        font-size: 1.2rem;
+        margin-left: 20rem;
+        margin-bottom: 0;
+      }
+
+      .audio1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .button {
+        margin-top: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head-cont">
+      <h1><i>Street foods</i></h1>
+    </div>
+    <hr />
+    <p>
+      we take <mark>pride in crafting</mark> unforgettable dining experiences
+      with every meal we serve. Our menu is a celebration of flavors, drawing
+      inspiration from both traditional and contemporary culinary traditions.
+      Each dish is thoughtfully prepared using the freshest, locally sourced
+      ingredients, ensuring a burst of flavor in every bite.
+    </p>
+    <div class="mutura-cont">
+      <a href="https://www.seriouseats.com/mutura">
+        <img src="/Images/mutura.jpeg" alt="" class="mutura"
+      /></a>
+    </div>
+    <p>
+      we take <mark>pride in crafting</mark> unforgettable dining experiences
+      with every meal we serve. Our menu is a celebration of flavors, drawing
+      inspiration from both traditional and contemporary culinary traditions.
+      Each dish is thoughtfully prepared using the freshest, locally sourced
+      ingredients, ensuring a burst of flavor in every bite.
+    </p>
+    <p>
+      we take <mark>pride in crafting</mark> unforgettable dining experiences
+      with every meal we serve. Our menu is a celebration of flavors, drawing
+      inspiration from both traditional and contemporary culinary traditions.
+      Each dish is thoughtfully prepared using the freshest, locally sourced
+      ingredients, ensuring a burst of flavor in every bite.
+    </p>
+    <p>
+      we take <mark>pride in crafting</mark> unforgettable dining experiences
+      with every meal we serve. Our menu is a celebration of flavors, drawing
+      inspiration from both traditional and contemporary culinary traditions.
+      Each dish is thoughtfully prepared using the freshest, locally sourced
+      ingredients, ensuring a burst of flavor in every bite.
+    </p>
+    <p>
+      we take <mark>pride in crafting</mark> unforgettable dining experiences
+      with every meal we serve. Our menu is a celebration of flavors, drawing
+      inspiration from both traditional and contemporary culinary traditions.
+      Each dish is thoughtfully prepared using the freshest, locally sourced
+      ingredients, ensuring a burst of flavor in every bite.
+    </p>
+    <hr />
+
+    <table border="1" width="100%">
+      <tr>
+        <th>food Image</th>
+        <th style="width: 120px">Item</th>
+        <th style="width: 120px">Price</th>
+        <th>Description</th>
+      </tr>
+
+      <tr>
+        <td>
+          <a
+            href="https://toasterding.com/kenyas-newest-food-sensation-smocha-obsession"
+            ><img src="/Images/smocha.jpeg" class="foods"
+          /></a>
+        </td>
+        <td>Smocha</td>
+        <td class="price">Ksh.70</td>
+        <td>
+          Smocha is a wrap that contains a smokie sausage on the inside with
+          kachumbari and sauces, all folded ..
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://tasty.co/recipe/kenyan-beef-samosas"
+            ><img src="/Images/samosa.jpeg" alt="" class="foods"
+          /></a>
+        </td>
+        <td>Beef Samosa</td>
+        <td class="price">Ksh.20</td>
+        <td>
+          Deep-fried beef samosas with a super savory and spicy ground beef and
+          vegetable filling seasoned
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://cookpad.com/ke/recipes/15438802-uji-power"
+            ><img src="/Images/Uji power.jpeg" alt="" class="foods"
+          /></a>
+        </td>
+        <td>Uji Power</td>
+        <td class="price">Ksh.100</td>
+        <td>
+          Uji power is a drink or flour made from a combination of ingredients
+          like arrowroot, cassava, sweet potatoes, and ground nuts
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://en.wikipedia.org/wiki/Shawarma"
+            ><img src="/Images/shawarma2.jpeg" alt="" class="foods"
+          /></a>
+        </td>
+        <td>Shawarma</td>
+        <td class="price">Ksh.150</td>
+        <td>
+          Shawarma is a popular dish of marinated meat that's sliced and served
+          in a pita, wrap, or sandwich. It's often accompanied by vegetables and
+          sauces.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="https://www.foodrepublic.com/1463794/mayai-pasua-kenyan-hard-boiled-egg/"
+            ><img src="/Images/mayai.jpeg" alt="" class="foods"
+          /></a>
+        </td>
+        <td>mayai pasua</td>
+        <td class="price">Ksh.25</td>
+        <td>
+          A popular Kenyan street food consisting of a hard-boiled egg that is
+          cut almost in half lengthwise, opened slightly, and stuffed with
+          kachumbari, a salad made of tomatoes, onions, and lemon juice, often
+          with added coriander and sometimes green chili.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="https://nairobikitchen.blogspot.com/2017/08/basic-french-fries-recipe.html"
+            ><img src="/Images/chips.jpeg" alt="" class="foods"
+          /></a>
+        </td>
+        <td>fries</td>
+        <td class="price">Ksh.50</td>
+        <td>
+          Are deep-fried potatoes of disputed origin. They are prepared by
+          cutting potatoes into even strips, drying them, and frying them,
+          usually in a deep fryer. Pre-cut, blanched, and frozen russet potatoes
+          are widely used, and sometimes baked in a regular or convection oven,
+          such as an air fryer.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a
+            href="https://whownskenya.com/how-smokies-made-their-way-into-the-kenyan-market/"
+            ><img src="/Images/smokie.jpeg" alt="" class="foods"
+          /></a>
+        </td>
+        <td>Smokie pasua</td>
+        <td class="price">Ksh.40</td>
+        <td>
+          a type of snack made from a grilled or roasted smokie (a type of
+          sausage) that is cut in half and filled with kachumbari, a salad made
+          from fresh tomatoes, onions, and coriander
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.aromaandessence.com/kenyan-bhajia/"
+            ><img src="/Images/bhajia.jpeg" alt="" class="foods"
+          /></a>
+        </td>
+        <td>bhajia</td>
+        <td class="price">Ksh.100</td>
+        <td>
+          It is a popular snack in Kenya, combining Indian and East African
+          culinary traditions. It is a crispy, spiced fritter made primarily
+          from potatoes and served with chutneys or ketchup.
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <div class="audio1">
+      <audio src="/Images/champions-anthem-209577.mp3" controls></audio>
+    </div>
+    <div class="vid1">
+      <video
+        src="/Images/WhatsApp Video 2025-02-05 at 11.51.53_a97b7440.mp4"
+        controls
+      ></video>
+    </div>
+
+    <h3 class="form-name">Subscribe to Our NewsLetter:</h3>
+    <form action="" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="kim@gmail.com"
+      />
+
+      <label for="phone">Phone Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        placeholder="+254756789123"
+      />
+
+      <div class="button">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+    <hr />
+
+    <footer>
+      <div class="end">
+        <p style="margin: 0; padding: 10px 0">
+          Copyright &copy; 2020 kimo Kitchen
+        </p>
+        <div class="logo">
+          <img
+            src="/Images/logo_circle-d106f02123de882fffdd2c06593eb2fd33f0ddf20418dd75ed72225bdb0e0ff7.png"
+            alt=""
+          />
+          <h2
+            style="
+              font-size: 3rem;
+              font-style: italic;
+              margin: 0;
+              padding: 10px 0;
+            "
+          >
+            Cheap Eats Hub
+          </h2>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

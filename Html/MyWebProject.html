@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UniTrade</title>
+    <!-- Link to the favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        #intro {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+        #liveVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .introContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .highlight {
+            background-color: rgba(113, 82, 226, 0.5); /* Semi-transparent black */
+            padding: 5px; /* Adjust padding to make the rectangle narrower */
+            display: inline-block;
+        }
+        .welcome-to {
+            color: white; /* Set the color for "Welcome to" */
+        }
+        .uni {
+            color: red; /* Set the color for "Uni" */
+        }
+        .trade {
+            color: green; /* Set the color for "Trade" */
+        }
+        .subtext {
+            font-size: 1.2em; /* Smaller than the h1 text */
+            color: rgb(248, 227, 227);
+        }
+        /* New CSS for form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px; /* Reduce space between form elements */
+            margin: 10px; /* Reduce margin around the form */
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="submit"] {
+            padding: 5px; /* Reduce padding for form elements */
+            margin-top: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        /* New CSS for submit button */
+        input[type="submit"] {
+            background-color: green; /* Set the background color to green */
+            color: white; /* Set the text color to white */
+            border: none; /* Remove the border */
+            padding: 5px 10px; /* Reduce padding for the submit button */
+            cursor: pointer; /* Change the cursor to a pointer on hover */
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkgreen; /* Change the background color on hover */
+        }
+
+        /* New CSS for logo and website name */
+        #logoContainer {
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            left: 10%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            z-index: 2; /* Ensure it's above other elements */
+        }
+
+        #logoContainer img {
+            height: 40px; /* Adjust logo height as needed */
+            margin-right: 10px;
+        }
+
+        #logoContainer span {
+            color: white;
+            font-size: 15rem; /* Adjust font size as needed */
+        }
+
+        /* CSS to make the image circular */
+        #circleImage {
+            width: 150px; /* Set the desired width */
+            height: 150px; /* Set the desired height */
+            border-radius: 50%; /* This makes the image circular */
+            object-fit: cover; /* Ensures the image covers the entire container */
+        }
+
+        /* CSS for social media and phone icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: black;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #209a49; /* Hover color */
+        }
+
+        /* CSS for the table and description layout */
+        .gallery-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .gallery-item img {
+            margin-right: 20px;
+        }
+        .gallery-description {
+            max-width: 600px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <video autoplay muted loop id="liveVideo">
+            <source src="campus2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="logoContainer">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="introContent">
+            <div class="highlight">
+                <h1><span class="welcome-to">Welcome to</span> <span class="uni">Uni</span><span class="trade">Trade</span></h1>
+                <p class="subtext">Explore our barter trade platform!</p>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2>About Us</h2>
+        <p class="right">We are a platform for university students to barter trade and buy items. Join us to find great deals and connect with fellow students!</p>
+         
+        <div class="container" id="signup" style="display:none;">
+           
+            <link rel="stylesheet" href="style1.css">
+            <h1 class="form-title">Register</h1>
+            <form method="post" action="register.php">
+              <div class="input-group">
+                 <i class="fas fa-user"></i>
+                 <input type="text" name="fName" id="fName" placeholder="First Name" required>
+                 <label for="fname">First Name</label>
+              </div>
+              <div class="input-group">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+                  <label for="lName">Last Name</label>
+              </div>
+              <div class="input-group">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" name="email" id="email" placeholder="Email" required>
+                  <label for="email">Email</label>
+              </div>
+              <div class="input-group">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="password" id="password" placeholder="Password" required>
+                  <label for="password">Password</label>
+              </div>
+             <input type="submit" class="btn" value="Sign Up" name="signUp">
+            </form>
+            <p class="or">
+              ----------or--------
+            </p>
+            <div class="icons">
+              <i class="fab fa-google"></i>
+              <i class="fab fa-facebook"></i>
+            </div>
+            <div class="links">
+              <p>Already Have Account ?</p>
+              <button id="signInButton">Sign In</button>
+            </div>
+          </div>
+      
+          <div class="container" id="signIn">
+              <h1 class="form-title">Sign In</h1>
+              <form method="post" action="register.php">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <label for="password">Password</label>
+                </div>
+                <p class="recover">
+                  <a href="#">Recover Password</a>
+                </p>
+               <input type="submit" class="btn" value="Sign In" name="signIn">
+              </form>
+              <p class="or">
+                ----------or--------
+              </p>
+              
+              
+              <div class="links">
+                <p>Don't have account yet?</p>
+                <button id="signUpButton">Sign Up</button>
+              </div>
+              <script src="script1.js"></script>
+            </div>
+        <h2 style="padding: 34px;color: #209a49;font-style: italic ;">How It Works</h2>
+        <p>List your items for trade or sale, browse through other listings, and connect with other students to make transactions.</p>
+        
+        <h2 style="background-color: chartreuse;">Gallery</h2>
+        <div class="gallery-item">
+            <img id="circleImage" src="/Images/dining table.jpeg" alt="Elegant Wooden Dining Table">
+            <div class="gallery-description">
+                <p><b>Elegant Wooden Dining Table</b><br>
+                    Transform your dining space with our Elegant Wooden Dining Table, a perfect blend of timeless design and modern craftsmanship. Whether you’re hosting a dinner party or enjoying a quiet meal with family, this table will be the centerpiece of countless cherished moments.
+                </p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img id="circleImage" src="/Images/armchair.jpeg" alt="Cozy Comfort Armchair">
+            <div class="gallery-description">
+                <p><b>Cozy Comfort Armchair</b><br>
+                    Elevate your relaxation experience with our Cozy Comfort Armchair, designed to bring both style and comfort into your living space. Whether you're curling up with a good book or enjoying a cup of tea, this armchair will become your favorite spot in the house.
+                </p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img id="circleImage" src="/Images/laptop.jpeg" alt="Laptop">
+            <div class="gallery-description">
+                <p><b>Laptop</b><br>
+                    Latest laptop in the market with best technological updates.
+                </p>
+            </div>
+        </div>
+
+        <h2 style="background-color: aqua;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Get our daily Newsletter and stay informed and on top of your Game</h2>
+        <form action="/submit_form" method="post">
+            <br>
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" style="width: 300px;" name="name" required placeholder="eg. John Doe">
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" style="width: 300px;" required placeholder="eg. example@example.com">
+            <br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" style="width: 300px;" required placeholder="eg. +1234567890">
+            <input type="submit" style="width: 200px; "value="Submit">
+        </form>
+
+        <h2 style="font-family: 'Times New Roman', Times, serif;" >Connect with Us</h2>
+        <div class="social-icons">
+            <a href="https://twitter.com/@victorhillan007" target="_twitter">
+                <i class='bx bxl-twitter bx-fade-left'></i>
+            </a>
+            <a href="https://facebook.com/vickie%20Hillan" target="_blank">
+                <i class='bx bxl-facebook-circle bx-tada'></i>
+            </a>
+            <a href="https://instagram.com/@Itschampez" target="_blank">
+                <i class='bx bxl-instagram-alt bx-fade-up'></i>
+            </a>
+        </div>
+
+    </div>
+    <header>

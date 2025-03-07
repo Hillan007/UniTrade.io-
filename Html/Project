@@ -1,0 +1,75 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+struct Task {
+    int id;
+    string description;
+};
+
+vector<Task> tasks;
+int nextId = 1;
+
+void addTask() {
+    Task newTask;
+    newTask.id = nextId++;
+    cout << "Enter task description: ";
+    cin.ignore();
+    getline(cin, newTask.description);
+    tasks.push_back(newTask);
+    cout << "Task added!\n";
+}
+
+void viewTasks() {
+    if (tasks.empty()) {
+        cout << "No tasks available.\n";
+        return;
+    }
+    cout << "To-Do List:\n";
+    for (const auto& task : tasks) {
+        cout << "ID: " << task.id << " - " << task.description << '\n';
+    }
+}
+
+void deleteTask() {
+    int id;
+    cout << "Enter task ID to delete: ";
+    cin >> id;
+    auto it = tasks.begin();
+    while (it != tasks.end()) {
+        if (it->id == id) {
+            tasks.erase(it);
+            cout << "Task deleted!\n";
+            return;
+        }
+        ++it;
+    }
+    cout << "Task ID not found.\n";
+}
+
+int main() {
+    int choice;
+    while (true) {
+        cout << "1. Add Task\n2. View Tasks\n3. Delete Task\n4. Exit\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                addTask();
+                break;
+            case 2:
+                viewTasks();
+                break;
+            case 3:
+                deleteTask();
+                break;
+            case 4:
+                cout << "Exiting...\n";
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again.\n";
+        }
+    }
+    return 0;
+}

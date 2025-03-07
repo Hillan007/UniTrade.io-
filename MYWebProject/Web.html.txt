@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Video Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #liveVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .content {
+            position:relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: rgb(167, 30, 30);
+            padding: 20px;
+            background: rgba(15, 14, 14, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="liveVideo">
+        <source src="\Images\WhatsApp Video 2025-02-01 at 20.56.10_b7ff0203.mp4   " type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <h1>Welcome to Our Website</h1>
+        <p>Explore our barter trade platform!</p>
+        
+    </div>
+    <script>
+        const video = document.getElementById("liveVideo");
+        const btn = document.getElementById("myBtn");
+
+        btn.addEventListener("click", function() {
+            if (video.paused) {
+                video.play();
+                btn.textContent = "Pause";
+            } else {
+                video.pause();
+                btn.textContent = "Play";
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
+
+

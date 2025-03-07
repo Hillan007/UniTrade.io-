@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists</title>
+</head>
+<body>
+    <table border="1"> 
+        <tr>
+            <th colspan="" rowspan="2">
+                <img src="/Images/EAT EXE2.jpg" alt="profile picture" height="144px" width="200">
+            </th>
+            <th colspan="4" style="background-color: rgb(140, 194, 82);">
+                <h1>Camelid Comparison</h1>
+                <p>Approximate as of 8/99</p>
+            </th>
+        </tr>
+            
+        <tr style="background-color: rgb(172, 54, 54);">
+            <th># of Humps</th>
+            <th>Indeginous Region</th>
+            <th >Spits</th>
+            <th >Produces wool</th>
+        </tr>
+
+        <tr>
+            <td >Camels (bactrian)</td>
+            <td>2</td>
+            <td>Africa/Asia</td>
+            <td rowspan="2">Llamas</td>
+            <td rowspan="2">Llama</td>
+        </tr>
+
+        <tr>
+            <td>Llamas</td>
+            <td>1</td>
+            <td>Andes Mountains</td>
+        </tr>
+    </table>
+</body>
+</html>
