@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniTrade</title>
+    <!-- Link to the favicon -->
+    <link rel="icon" type="image/png" href="/Public/Images/logo/logo.svg">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/Public/styles.Css/styles.css">
+    <script src="/Public/Script.Js/script.js"></script>
+</head>
+<body>
+
+    <!-- Intro Section with Live Video Background -->
+    <div id="intro">
+        <video id="liveVideo" autoplay muted playsinline>
+            <source src="/Public/Index.html/Videos/campus1.mp4" type="video/mp4">
+            <img src="/Public/Images/coffee.jpg" alt="Fallback image">
+            Your browser does not support the video tag.
+        </video>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let video = document.getElementById("liveVideo");
+                video.play().catch(error => {
+                    console.log("Autoplay failed:", error);
+                });
+            });
+        </script>
+        <header>
+            <div id="logoContainer">
+                <img src="/Public/Images/logo/logo.png" alt="Logo">
+                <span>Uni<span class="trade">Trade</span></span>
+            </div>
+            <div class="cart" id="cartButton">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </div>
+        </header>
+
+        <!-- Add Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <button onclick="searchProducts()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="introContent">
+            <div class="highlight">
+                <h1>Welcome to <span class="uni">Uni</span><span class="trade">Trade</span></h1>
+                <p>Explore our barter trade platform!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>Welcome to UniTrade!</h1>
+        <p>Explore our barter trade platform and start listing or purchasing items.</p>
+
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a platform for university students to barter trade and buy items. Join us to find great deals and connect with fellow students!</p>
+        </div>
+
+        <h2>Gallery</h2>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab('furniture')">Furniture</button>
+                <button class="tab-btn" onclick="openTab('electronics')">Electronics</button>
+                <button class="tab-btn" onclick="openTab('clothing')">Clothing</button>
+                <button class="tab-btn" onclick="openTab('foodstuffs')">Foodstuffs</button>
+            </div>
+
+            <!-- Furniture Tab -->
+            <div id="furniture" class="tab-content active">
+                <div class="gallery-item">
+                    <img src="/Public/Images/dining table.jpeg" alt="Elegant Wooden Dining Table" onclick="addToCart('Elegant Wooden Dining Table - KSH 12,000')">
+                    <div class="gallery-description">
+                        <p><b>Elegant Wooden Dining Table</b><br>Timeless design and modern craftsmanship.<br><span class="price">KSH 12,000</span><br>Seller's cell:0712345678</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/Public/Images/armchair.jpeg" alt="Cozy Comfort Armchair" onclick="addToCart('Cozy Comfort Armchair - KSH 5,500')">
+                    <div class="gallery-description">
+                        <p><b>Cozy Comfort Armchair</b><br>Style and comfort for your living space.<br><span class="price">KSH 5,500</span><br>Seller's Cell:0722334455</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/Public/Images/bookshelf.jpeg" alt="Modern Bookshelf" onclick="addToCart('Modern Bookshelf - KSH 8,000')">
+                    <div class="gallery-description">
+                        <p><b>Modern Bookshelf</b><br>Sleek storage for your books.<br><span class="price">KSH 8,000</span><br>Seller's Cell:010234569</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electronics Tab -->
+            <div id="electronics" class="tab-content">
+                <div class="gallery-item">
+                    <img src="/Public/Images/laptop.jpeg" alt="Laptop" onclick="addToCart('Laptop - KSH 45,000')">
+                    <div class="gallery-description">
+                        <p><b>Laptop</b><br>Latest tech with top updates.<br><span class="price">KSH 45,000</span><br>Seller's Cell:0789675643</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/Public/Images/desk lamp.jpeg" alt="Stylish Desk Lamp" onclick="addToCart('Stylish Desk Lamp - KSH 2,500')">
+                    <div class="gallery-description">
+                        <p><b>Stylish Desk Lamp</b><br>Perfect lighting for study or work.<br><span class="price">KSH 2,500</span><br>Seller's Cell:0756789023</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/Public/Images/headphones.jpeg" alt="Wireless Headphones" onclick="addToCart('Wireless Headphones - KSH 3,800')">
+                    <div class="gallery-description">
+                        <p><b>Wireless Headphones</b><br>High-quality sound on the go.<br><span class="price">KSH 3,800</span><br>Seller's Cell:0789090056</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clothing Tab -->
+            <div id="clothing" class="tab-content">
+                <div class="gallery-item">
+                    <img src="/Public/Images/jacket.jpeg" alt="Leather Jacket" onclick="addToCart('Leather Jacket - KSH 4,200')">
+                    <div class="gallery-description">
+                        <p><b>Leather Jacket</b><br>Stylish and durable outerwear.<br><span class="price">KSH 4,200</span><br>Seller's Cell:0756453421</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/Public/Images/sneakers.jpg" alt="Trendy Sneakers" onclick="addToCart('Trendy Sneakers - KSH 3,000')">
+                    <div class="gallery-description">
+                        <p><b>Trendy Sneakers</b><br>Comfortable and fashionable.<br><span class="price">KSH 3,000</span><br>Seller's Cell:0102345678</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Foodstuffs Tab -->
+            <div id="foodstuffs" class="tab-content">
+                <div class="gallery-item">
+                    <img src="/Public/Images/coffee.jpg" alt="Premium Coffee" onclick="addToCart('Premium Coffee - KSH 800')">
+                    <div class="gallery-description">
+                        <p><b>Premium Coffee</b><br>Rich and aromatic blend.<br><span class="price">KSH 800</span><br>Seller's Cell:0755443322</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/Public/Images/snacks.jpg" alt="Snack Pack" onclick="addToCart('Snack Pack - KSH 1,200')">
+                    <div class="gallery-description">
+                        <p><b>Snack Pack</b><br>Assorted treats for study breaks.<br><span class="price">KSH 1,200</span><br>Seller's Cell:0761234567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://twitter.com/@victorhillan007" target="_blank">
+                <i class='bx bxl-twitter bx-fade-left'></i>
+            </a>
+            <a href="https://facebook.com/vickie%20Hillan" target="_blank">
+                <i class='bx bxl-facebook-circle bx-tada'></i>
+            </a>
+            <a href="https://instagram.com/@Itschampez" target="_blank">
+                <i class='bx bxl-instagram-alt bx-fade-up'></i>
+            </a>
+        </div>
+
+        <!-- Trigger Buttons -->
+        <button onclick="openRegistrationForm()">Register</button>
+        <button onclick="openReceipt()">View Receipt</button>
+
+        <!-- Purchase History Section -->
+        <div class="purchase-history">
+            <h3>Your Purchase History</h3>
+            <ul id="purchaseHistoryList">
+                <li>No purchases yet.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-items">
+            <h3>My Cart</h3>
+            <div id="cartContent">
+                <p>No items in cart.</p>
+            </div>
+            <button class="purchase-btn" onclick="purchaseItems()">Purchase</button>
+            <div class="close-btn">
+                <button onclick="closeCart()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Printable Receipt -->
+    <div id="receiptModal" class="modal">
+        <div class="modal-content">
+            <h2>Receipt</h2>
+            <div id="receiptContent">
+                <p>No items purchased yet.</p>
+            </div>
+            <button onclick="printReceipt()">Print Receipt</button>
+            <button onclick="closeReceipt()">Close</button>
+        </div>
+    </div>
+
+    <!-- Registration Form -->
+    <div id="registrationForm" class="modal">
+        <div class="modal-content">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <button type="button" class="btn-submit" onclick="submitRegistration()">Register</button>
+            </form>
+            <button class="btn-close" onclick="closeRegistrationForm()">Close</button>
+        </div>
+    </div>
+
+</body>
+</html>
