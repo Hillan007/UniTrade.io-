@@ -1,16 +1,46 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const bcrypt = require('bcrypt');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to SQLite database
 const db = new sqlite3.Database('./database.db', (err) => {
   if (err) console.error('Database connection error:', err);
   else console.log('Connected to SQLite database');
+});
+
+// Registration API
+app.post('/register', (req, res) => {
+    console.log("Request received:", req.body);
+
+    const { name, email, password } = req.body;
+
+    bcrypt.hash(password, 10, (err, hashedPassword) => {
+        if (err) {
+            console.error("Password hashing error:", err);
+            return res.status(500).json({ error: "Password hashing failed!" });
+        }
+
+        db.run(
+            "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
+            [name, email, hashedPassword],
+            function (err) {
+                if (err) {
+                    console.error("Database error:", err.message);
+                    return res.status(500).json({ error: "Registration failed!" });
+                }
+                console.log("User registered with ID:", this.lastID);
+                res.json({ message: "Registration successful!", userId: this.lastID });
+            }
+        );
+    });
 });
 
 // Create tables and seed initial data
@@ -37,6 +67,14 @@ db.serialize(() => {
       purchase_date TEXT,
       FOREIGN KEY (item_id) REFERENCES items(id)
     )`);
+  db.run(`
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL
+    )
+  `);
 
   // Seed initial items if the table is empty
   db.get("SELECT COUNT(*) as count FROM items", (err, row) => {
@@ -122,3 +160,6 @@ app.get('/api/purchases', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
+
+
