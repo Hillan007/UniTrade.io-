@@ -1,5 +1,7 @@
 <?php
+
 // Database connection setup
+
 $host = "localhost";
 $user = "root"; // Default WAMP username
 $pass = "";     // Default WAMP password is empty
